@@ -5,10 +5,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'CAE - Account',
+    'name': 'Company Wizard - Account Module (Test)',
     'version': '10.0.1.0.0',
-    'category': 'CAE',
-    'summary': 'Manage Cooperatives of Activities and Employment - Account',
+    'category': 'Tools',
+    'summary': "Glue module to create companies when Account module is"
+    " installed",
     'author': 'GRAP',
     'website': 'http://www.grap.coop',
     'license': 'AGPL-3',

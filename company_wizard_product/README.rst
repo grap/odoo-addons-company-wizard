@@ -2,34 +2,14 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==========================================================
-Manage Cooperatives of Activities and Employment - Product
-==========================================================
+===============================
+Company Wizard - Product Module
+===============================
 
+This module extend Odoo functionnalities, extending Company Wizard creation
+when Product module is installed.
 
-This module extend Odoo functionnalities, regarding companies features to
-manage CAE (Coopearatives of Activities and Employment) that is a special
-status for french companies.
-
-Features
---------
-
-* user in mother company can see product of all child company
-* user in fiscal company can see but not update / delete product
-  of mother company
-* Add a field ```cae_administrative_ok``` on ```product.product```. if checked
-  the product will not be updatable by non 'CAE Manager' users
-
-Company Creation Wizard
------------------------
-
-* Create a Sale Pricelist and the according property to
-  ```property_product_pricelist```
-
-Installation
-============
-
-Normal installation.
+this module will create a default sale Pricelist when the wizard is used.
 
 Credits
 =======
@@ -39,3 +19,10 @@ Contributors
 
 * Julien WESTE
 * Sylvain LE GAL <https://twitter.com/legalsylvain>
+
+Funders
+-------
+
+The development of this module has been financially supported by:
+
+* GRAP, Groupement Régional Alimentaire de Proximité (http://www.grap.coop)

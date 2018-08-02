@@ -1,13 +1,13 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* base_fiscal_company
+#	* company_wizard_base
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-15 23:09+0000\n"
-"PO-Revision-Date: 2015-01-15 23:09+0000\n"
+"POT-Creation-Date: 2018-08-02 16:58+0000\n"
+"PO-Revision-Date: 2018-08-02 16:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,202 +15,211 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
-msgid "Accounting"
-msgstr "Comptabilité"
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "Address"
+msgstr "Adresse"
 
-#. module: base_fiscal_company
-#: model:res.groups,name:base_fiscal_company.res_group_administrative_manager
-msgid "Administrative Manager of CIS"
-msgstr "Gestionnaire de Coopérative de Filière Intégrée"
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "Administrative information"
+msgstr "information administrative"
 
-#. module: base_fiscal_company
-#: selection:res.company.create.wizard,type:0
-msgid "Associated Company"
-msgstr "Société associée"
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "Basic Accounting Settings"
+msgstr "Paramétrage comptable simple"
 
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
-msgid "Begin"
-msgstr "Commencer"
-
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
 msgid "Cancel"
 msgstr "Annuler"
 
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
-msgid "Close"
-msgstr "Fermer"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_city
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "City"
+msgstr "Ville"
 
-#. module: base_fiscal_company
-#: field:res.company,code:0
-#: field:res.company.create.wizard,code:0
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_code
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_code
 msgid "Code"
 msgstr "Code"
 
-#. module: base_fiscal_company
-#: code:_description:0
-#: model:ir.model,name:base_fiscal_company.model_res_company
-#, python-format
+#. module: company_wizard_base
+#: model:ir.model,name:company_wizard_base.model_res_company
 msgid "Companies"
 msgstr "Sociétés"
 
-#. module: base_fiscal_company
-#: field:res.company.create.wizard,company_id:0
-msgid "Company"
-msgstr "Société"
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "Company Contact"
+msgstr "Contact de la société"
 
-#. module: base_fiscal_company
-#: model:ir.actions.act_window,name:base_fiscal_company.action_res_company_create_wizard
-#: model:ir.ui.menu,name:base_fiscal_company.menu_res_company_create_wizard
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_registry
+msgid "Company Registry"
+msgstr "Registre du commerce et des Sociétés"
+
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_id
+msgid "Company id"
+msgstr "Company id"
+
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_country_id
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "Country"
+msgstr "Pays"
+
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "Create Company"
+msgstr "Créer une société"
+
+#. module: company_wizard_base
+#: model:ir.actions.act_window,name:company_wizard_base.action_res_company_create_wizard
+#: model:ir.ui.menu,name:company_wizard_base.menu_res_company_create_wizard
 msgid "Create New Company"
-msgstr "Créer une nouvelle Société"
+msgstr "Creer une nouvelle société"
 
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
-msgid "Create a New Company"
-msgstr "Créer une nouvelle société"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_create_user
+msgid "Create User"
+msgstr "Créer un utilisateur"
 
-#. module: base_fiscal_company
-#: constraint:res.company.create.wizard:0
-msgid "Error on Mother Company: Please select a normal Parent Company if the company is 'associated' and and a Fiscal Mother Company, if the company is 'integrated'"
-msgstr "Erreur sur la société Mère : Merci de sélectionner une société parente normale, si la société est 'associée' et une société Fiscale Mère, si la société est 'intégrée'"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
 
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
-msgid "Finish"
-msgstr "Terminer"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
 
-#. module: base_fiscal_company
-#: selection:res.company,fiscal_type:0
-msgid "Fiscal Child Company"
-msgstr "Société Fiscale Fille"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
 
-#. module: base_fiscal_company
-#: selection:res.company,fiscal_type:0
-msgid "Fiscal Mother Company"
-msgstr "Société Fiscale Mère"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_email
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_user_email
+msgid "Email"
+msgstr "Courriel"
 
-#. module: base_fiscal_company
-#: field:res.company,fiscal_type:0
-msgid "Fiscal Type"
-msgstr "Type Fiscale"
-
-#. module: base_fiscal_company
-#: view:res.company:0
-msgid "Fiscal information"
-msgstr "Information Fiscale"
-
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
 msgid "General Information"
 msgstr "Information générale"
 
-#. module: base_fiscal_company
-#: selection:res.company.create.wizard,type:0
-msgid "Integrated Company"
-msgstr "Société Intégrée"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_id
+msgid "ID"
+msgstr "ID"
 
-#. module: base_fiscal_company
-#: field:res.company.create.wizard,mother_company:0
-msgid "Mother Company"
-msgstr "Société Mère"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
 
-#. module: base_fiscal_company
-#: field:res.company.create.wizard,name:0
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: company_wizard_base
+#: model:ir.model.fields,help:company_wizard_base.field_res_company_create_wizard_user_login
+msgid "Let empty to use the email as login"
+msgstr "Let empty to use the email as login"
+
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_user_login
+msgid "Login"
+msgstr "Identifiant"
+
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_name
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_user_name
 msgid "Name"
 msgstr "Nom"
 
-#. module: base_fiscal_company
-#: selection:res.company,fiscal_type:0
-msgid "Normal"
-msgstr "Normal"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_parent_company_id
+msgid "Parent Company"
+msgstr "Société mère"
 
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
-#: field:res.company.create.wizard,password:0
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_user_password
 msgid "Password"
 msgstr "Mot de passe"
 
-#. module: base_fiscal_company
-#: constraint:res.company:0
-msgid "Please select a Fiscal Mother Company for a Fiscal Child Company"
-msgstr "Veuillez selectionner une société fiscale mère pour la société fiscale fille courante."
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_phone
+msgid "Phone"
+msgstr "Téléphone"
 
-#. module: base_fiscal_company
-#: field:res.company.create.wizard,state:0
-msgid "Status"
-msgstr "Etat"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_state_id
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "State"
+msgstr "État"
 
-#. module: base_fiscal_company
-#: field:res.company.create.wizard,vat:0
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_street
+msgid "Street"
+msgstr "Rue"
+
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "Street 2..."
+msgstr "Rue 2..."
+
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_street2
+msgid "Street complement"
+msgstr "Complément d'adresse"
+
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "Street..."
+msgstr "Rue..."
+
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_vat
 msgid "Tax ID"
 msgstr "Numéro de TVA"
 
-#. module: base_fiscal_company
-#: help:res.company,code:0
-msgid "This field is used as a prefix to generate automatic and unique reference for items (product, ...).\n"
-"Warning, changing this value will change the reference of all items of this company."
-msgstr "Ce champ est utilisé comme préfixe pour générer des codes uniques et automatiques pour différents objets (produits, etc...).\n" "Attention, changer cette valeur changera la référence tous les items de cette société."
-
-#. module: base_fiscal_company
-#: help:res.company.create.wizard,code:0
-msgid "This field is used as a prefix to generate automatic and unique reference for items (product, ...).Warning, changing this value will change the reference of all items of this company."
-msgstr "Ce champ est utilisé comme préfixe pour générer des codes uniques et automatiques pour différents objets (produits, etc...) Attention, changer cette valeur changera la référence tous les items de cette société."
-
-#. module: base_fiscal_company
-#: field:res.company.create.wizard,type:0
-msgid "Type"
-msgstr "Type"
-
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
+#. module: company_wizard_base
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
 msgid "User Information"
-msgstr "User Information"
+msgstr "Information sur l'utilisateur"
 
-#. module: base_fiscal_company
-#: code:_description:0
-#, python-format
-msgid "Users"
-msgstr "Utilisateurs"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_user_id
+msgid "User id"
+msgstr "User id"
 
-#. module: base_fiscal_company
-#: constraint:res.company:0
-msgid "You can't select an other company for a Non Fiscal Child Company"
-msgstr "Vous ne pouvez pas sélectionner une autre société pour une société fille non fiscale"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_website
+msgid "Website"
+msgstr "Site Web"
 
-#. module: base_fiscal_company
-#: selection:res.company.create.wizard,state:0
-msgid "done"
-msgstr "fait"
+#. module: company_wizard_base
+#: model:ir.model.fields,field_description:company_wizard_base.field_res_company_create_wizard_company_zip
+#: model:ir.ui.view,arch_db:company_wizard_base.view_res_company_create_wizard_form
+msgid "ZIP"
+msgstr "Code postal"
 
-#. module: base_fiscal_company
-#: selection:res.company.create.wizard,state:0
-msgid "init"
-msgstr "début"
-
-#. module: base_fiscal_company
-#: view:res.company.create.wizard:0
-msgid "or"
-msgstr "ou"
-
-#. module: base_fiscal_company
-#: selection:res.company.create.wizard,state:0
-msgid "pending"
-msgstr "en cours"
-
-#. module: base_fiscal_company
-#: code:_description:0
-#: model:ir.model,name:base_fiscal_company.model_res_company_create_wizard
-#, python-format
+#. module: company_wizard_base
+#: model:ir.model,name:company_wizard_base.model_res_company_create_wizard
 msgid "res.company.create.wizard"
 msgstr "res.company.create.wizard"
-
-#. module: base_fiscal_company
-#: model:ir.model,name:base_fiscal_company.model_res_users
-msgid "res.users"
-msgstr "res.users"
 

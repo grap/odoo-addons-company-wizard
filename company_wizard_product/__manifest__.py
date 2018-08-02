@@ -4,10 +4,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'CAE - Product Fiscal Company',
+    'name': 'Company Wizard - Product Module',
     'version': '10.0.1.0.0',
-    'category': 'CIS',
-    'summary': 'Glue Module between CIS and product',
+    'category': 'Tools',
+    'summary': "Glue module to create companies when Product module is"
+    " installed",
     'author': 'GRAP',
     'website': 'http://www.grap.coop',
     'license': 'AGPL-3',
