@@ -12,21 +12,6 @@ from odoo.exceptions import Warning as UserError
 class ResCompanyCreateWizard(models.TransientModel):
     _inherit = 'res.company.create.wizard'
 
-    _FISCALYEAR_LAST_MONTH_SELECTION = [
-        (1, 'January'),
-        (2, 'February'),
-        (3, 'March'),
-        (4, 'April'),
-        (5, 'May'),
-        (6, 'June'),
-        (7, 'July'),
-        (8, 'August'),
-        (9, 'September'),
-        (10, 'October'),
-        (11, 'November'),
-        (12, 'December'),
-    ]
-
     # Columns Section
     chart_template_id = fields.Many2one(
         comodel_name='account.chart.template', string='Account Template',
@@ -36,13 +21,6 @@ class ResCompanyCreateWizard(models.TransientModel):
 
     currency_id = fields.Many2one(
         comodel_name='res.currency', string='Account Currency')
-
-    fiscalyear_last_day = fields.Integer(
-        string='Fiscal Year Last Day', default=31)
-
-    fiscalyear_last_month = fields.Selection(
-        string='Fiscal Year Last Month',  default=12,
-        selection=_FISCALYEAR_LAST_MONTH_SELECTION)
 
     payable_account_template_id = fields.Many2one(
         comodel_name='account.account.template',
