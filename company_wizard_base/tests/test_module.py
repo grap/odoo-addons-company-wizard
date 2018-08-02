@@ -6,6 +6,8 @@
 
 from odoo.tests.common import TransactionCase
 
+from ..fix_test import fix_required_field
+
 
 class TestModule(TransactionCase):
     """Tests for 'Company Wizard - Base' Module"""
@@ -20,12 +22,23 @@ class TestModule(TransactionCase):
 
         self.user_erp_manager = self.env.ref(
             'company_wizard_base.user_erp_manager')
+        fix_required_field(self, 'DROP')
+
+    def tearDown(self):
+        self.cr.rollback()
+        fix_required_field(self, 'SET')
+        super(TestModule, self).tearDown()
 
     # Test Section
     def test_01_wizard(self):
         """Create a child company via the wizard, with user ERP Manager"""
-        wizard = self.wizard_obj.sudo(self.user_erp_manager).create(
-            self._prepare_company_wizard())
+        wizard = self.wizard_obj.sudo(self.user_erp_manager).create({
+            'company_name': 'Test Company Wizard',
+            'company_code': 'WIZ',
+            'create_user': True,
+            'user_name': 'Test User Wizard',
+            'user_login': 'test_user_wizard@odoo.com',
+        })
         wizard.button_create_company()
 
         # Check if the company is well created
@@ -45,12 +58,3 @@ class TestModule(TransactionCase):
         self.assertEqual(
             len(users), 1,
             "The user creation via the wizard failed.")
-
-    def _prepare_company_wizard(self):
-        return {
-            'company_name': 'Test Company Wizard',
-            'code': 'WIZ',
-            'create_user': True,
-            'user_name': 'Test User Wizard',
-            'user_login': 'test_user_wizard@odoo.com',
-        }
