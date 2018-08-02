@@ -12,17 +12,14 @@ Copyright (C) 2015-Today GRAP (http://www.grap.coop)
         <field name="model">res.company.create.wizard</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <field name="state" widget="statusbar"/>
-                </header>
                 <group string="General Information" col="4">
-                    <field name="company_name" attrs="{'readonly': [('state', '!=', 'init')]}"/>
-                    <field name="code" attrs="{'readonly': [('state', '!=', 'init')]}"/>
-                    <field name="parent_company_id" attrs="{'readonly': [('state', '!=', 'init')]}" options="{'no_create': True}"/>
+                    <field name="company_name"/>
+                    <field name="company_code"/>
+                    <field name="parent_company_id" options="{'no_create': True}"/>
                     <field name="company_id" invisible="1"/>
                 </group>
                 <notebook>
-                    <page string="Company Contact" states="init">
+                    <page string="Company Contact">
                         <group col="4">
                             <group colspan="2">
                             <label for="street" string="Address"/>
@@ -43,13 +40,13 @@ Copyright (C) 2015-Today GRAP (http://www.grap.coop)
                         </group>
 
                     </page>
-                    <page string="Administrative information" states="init">
+                    <page string="Administrative information">
                         <group string="Basic Accounting Settings" name="group_basic_account">
                             <field name="company_registry"/>
-                            <field name="vat"/>
+                            <field name="company_vat"/>
                         </group>
                     </page>
-                    <page string="User Information" states="init">
+                    <page string="User Information">
                         <group>
                             <field name="create_user"/>
                         </group>
@@ -62,13 +59,8 @@ Copyright (C) 2015-Today GRAP (http://www.grap.coop)
                     </page>
                 </notebook>
                 <footer>
-                    <div states="init">
-                        <button name="button_create_company" string="Create Company" type="object" class="btn-primary"/>
-                        <button special="cancel" string="Cancel" class="btn-default"/>
-                    </div>
-                    <div states="done">
-                        <button special="cancel" string="Close" class="btn-primary"/>
-                    </div>
+                    <button name="button_create_company" string="Create Company" type="object" class="btn-primary"/>
+                    <button special="cancel" string="Cancel" class="btn-default"/>
                 </footer>
             </form>
         </field>

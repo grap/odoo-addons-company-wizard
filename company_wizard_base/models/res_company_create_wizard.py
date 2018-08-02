@@ -15,23 +15,14 @@ class ResCompanyCreateWizard(models.TransientModel):
 
     _PASSWORD_SIZE = 8
 
-    _STATE_SELECTION = [
-        ('init', 'Start'),
-        ('done', 'Done'),
-    ]
-
-    state = fields.Selection(
-        selection=_STATE_SELECTION, string='State', readonly=True,
-        default='init')
-
     company_name = fields.Char(string='Name', required=True)
 
-    code = fields.Char(string='Code', required=True)
+    company_code = fields.Char(string='Code')
 
     parent_company_id = fields.Many2one(
         comodel_name='res.company', string='Parent Company')
 
-    vat = fields.Char(string='Tax ID')
+    company_vat = fields.Char(string='Tax ID')
 
     company_registry = fields.Char(string='Company Registry')
 
@@ -84,16 +75,6 @@ class ResCompanyCreateWizard(models.TransientModel):
     def button_create_company(self):
         self.ensure_one()
         self._create_company()
-        self.state = 'done'
-        return {
-            'type': 'ir.actions.act_window',
-            'res_model': 'res.company.create.wizard',
-            'view_mode': 'form',
-            'view_type': 'form',
-            'res_id': self.id,
-            'views': [(False, 'form')],
-            'target': 'new',
-        }
 
     # Overloadable Prepare Function
     @api.multi
@@ -101,7 +82,7 @@ class ResCompanyCreateWizard(models.TransientModel):
         self.ensure_one()
         return {
             'name': self.company_name,
-            'code': self.code,
+            'code': self.company_code,
             'parent_id': self.parent_company_id.id,
             'street': self.company_street,
             'street2': self.company_street2,
@@ -111,7 +92,7 @@ class ResCompanyCreateWizard(models.TransientModel):
             'website': self.company_website,
             'email': self.company_email,
             'phone': self.company_phone,
-            'vat': self.vat,
+            'vat': self.company_vat,
             'company_registry': self.company_registry,
         }
 
