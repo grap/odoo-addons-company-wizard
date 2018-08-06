@@ -8,8 +8,7 @@
     'name': 'Company Wizard - Account Module (Test)',
     'version': '10.0.1.0.0',
     'category': 'Tools',
-    'summary': "Glue module to create companies when Account module is"
-    " installed",
+    'summary': "Module to test company_wizard_account module",
     'author': 'GRAP',
     'website': 'http://www.grap.coop',
     'license': 'AGPL-3',
