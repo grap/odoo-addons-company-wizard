@@ -75,6 +75,7 @@ class ResCompanyCreateWizard(models.TransientModel):
     def button_create_company(self):
         self.ensure_one()
         self._create_company()
+        return True
 
     # Overloadable Prepare Function
     @api.multi
