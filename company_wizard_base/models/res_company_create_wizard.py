@@ -8,6 +8,8 @@ import string
 from random import choice
 
 from odoo import api, fields, models
+from odoo.addons.base.res.res_users import\
+    name_boolean_group, name_selection_groups
 
 
 class ResCompanyCreateWizard(models.TransientModel):
@@ -60,6 +62,10 @@ class ResCompanyCreateWizard(models.TransientModel):
     user_password = fields.Char(
         string='Password', default=lambda s: s._default_user_password())
 
+    user_group_ids = fields.Many2many(
+        string='Groups', comodel_name='res.groups',
+        default=lambda s: s._default_user_group_ids())
+
     # Technical hidden fields
     company_id = fields.Many2one(comodel_name='res.company')
 
@@ -69,6 +75,9 @@ class ResCompanyCreateWizard(models.TransientModel):
     def _default_user_password(self):
         characters = string.ascii_letters + string.digits
         return "".join(choice(characters) for x in range(self._PASSWORD_SIZE))
+
+    def _default_user_group_ids(self):
+        return self._prepare_user_group_ids_from_default_get()
 
     # Button Section
     @api.multi
@@ -117,13 +126,23 @@ class ResCompanyCreateWizard(models.TransientModel):
             'new_password': self.user_password,
             'company_id': self.company_id.id,
             'company_ids': [(4, self.company_id.id)],
+            'groups_id': [(4, x.id) for x in self.user_group_ids],
         }
 
-    @api.multi
-    def _prepare_user_groups(self):
-        """Overload this function. Should return a list of xml ids of groups"""
-        self.ensure_one()
-        return []
+    @api.model
+    def _prepare_user_group_ids_from_default_get(self):
+        group_obj = self.env['res.groups']
+        user_obj = self.env['res.users']
+        res1 = group_obj.get_groups_by_application()
+        fields = []
+        for item in res1:
+            if item[1] == 'boolean':
+                for group in item[2]:
+                    fields.append(name_boolean_group(group.id))
+            elif item[1] == 'selection':
+                fields.append(name_selection_groups(item[2].ids))
+        res2 = user_obj.default_get(fields)
+        return res2['groups_id'][0][2]
 
     @api.multi
     def _create_company(self):
@@ -148,7 +167,3 @@ class ResCompanyCreateWizard(models.TransientModel):
         # Create User if required
         if self.create_user:
             self.user_id = user_obj.create(self._prepare_user())
-            for group in self._prepare_user_groups():
-                self.env.ref(group).write({
-                    'users': [(4, self.user_id.id)],
-                })

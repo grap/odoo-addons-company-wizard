@@ -3,10 +3,8 @@
 # @author: Julien WESTE
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-# flake8: noqa
 
-from odoo import _, api, fields, models
-from odoo.exceptions import Warning as UserError
+from odoo import api, fields, models
 
 
 class ResCompanyCreateWizard(models.TransientModel):
@@ -25,16 +23,16 @@ class ResCompanyCreateWizard(models.TransientModel):
     payable_account_template_id = fields.Many2one(
         comodel_name='account.account.template',
         string='Default Payable Account',
-        domain= lambda s: s._get_account_template_domain('payable'))
+        domain=lambda s: s._get_account_template_domain('payable'))
 
     receivable_account_template_id = fields.Many2one(
         comodel_name='account.account.template',
         string='Default Receivable Account',
-        domain= lambda s: s._get_account_template_domain('receivable'))
+        domain=lambda s: s._get_account_template_domain('receivable'))
 
     transfer_account_id = fields.Many2one(
         comodel_name='account.account.template', string='Transfer Account',
-        domain= lambda s: s._get_account_template_domain('transfer'))
+        domain=lambda s: s._get_account_template_domain('transfer'))
 
     @api.model
     def _get_account_template_domain(self, type_name):
@@ -47,13 +45,6 @@ class ResCompanyCreateWizard(models.TransientModel):
         elif type_name == 'payable':
             type = self.env.ref('account.data_account_type_payable')
         return domain + [('user_type_id', '=', type.id)]
-
-    @api.multi
-    def _prepare_user_groups(self):
-        self.ensure_one()
-        res = super(ResCompanyCreateWizard, self)._prepare_user_groups()
-        res.append('account.group_account_user')
-        return res
 
     @api.multi
     def _prepare_chart_wizard(self):
@@ -72,8 +63,7 @@ class ResCompanyCreateWizard(models.TransientModel):
     def _create_company(self):
         self.ensure_one()
         chart_wizard_obj = self.env['wizard.multi.charts.accounts']
-        res = super(ResCompanyCreateWizard, self)._create_company()
-
+        super(ResCompanyCreateWizard, self)._create_company()
         if self.chart_template_id:
             # Install Chart of Accounts
             chart_wizard = chart_wizard_obj.create(

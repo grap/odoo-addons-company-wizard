@@ -56,6 +56,9 @@ Copyright (C) 2015-Today GRAP (http://www.grap.coop)
                             <field name="user_login"/>
                             <field name="user_password" attrs="{'required': [('create_user', '=', True)]}"/>
                         </group>
+                        <group attrs="{'invisible': [('create_user', '=', False)]}" string="Groups" name="user_group">
+                            <field name="user_group_ids" nolabel="1"/>
+                        </group>
                     </page>
                 </notebook>
                 <footer>
