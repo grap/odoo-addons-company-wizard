@@ -1,4 +1,3 @@
-# coding: utf-8
 # Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
@@ -10,6 +9,10 @@ _FIELD_LIST = [
     ('res_partner', 'sale_warn'),
     ('res_partner', 'picking_warn'),
     ('res_partner', 'purchase_warn'),
+    ('res_users', 'notification_type'),
+    ('res_users', 'odoobot_state'),
+    ('res_company', 'fiscalyear_last_day'),
+    ('res_company', 'fiscalyear_last_month'),
 ]
 
 

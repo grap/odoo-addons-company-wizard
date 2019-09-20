@@ -1,4 +1,3 @@
-# coding: utf-8
 # Copyright (C) 2013-Today: GRAP (http://www.grap.coop)
 # @author: Julien WESTE
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
@@ -6,7 +5,7 @@
 
 {
     'name': 'Company Wizard - Account Module (Test)',
-    'version': '10.0.1.0.0',
+    'version': '12.0.1.0.0',
     'category': 'Tools',
     'summary': "Module to test company_wizard_account module",
     'author': 'GRAP',

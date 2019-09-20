@@ -1,4 +1,3 @@
-# coding: utf-8
 # Copyright (C) 2013-Today: GRAP (http://www.grap.coop)
 # @author: Julien WESTE
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
@@ -10,5 +9,4 @@ from odoo import fields, models
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    # Columns Section
     code = fields.Char(string='Code')

@@ -1,4 +1,3 @@
-# coding: utf-8
 # Copyright (C) 2013-Today: GRAP (http://www.grap.coop)
 # @author: Julien WESTE
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
@@ -8,12 +7,13 @@ import string
 from random import choice
 
 from odoo import api, fields, models
-from odoo.addons.base.res.res_users import\
+from odoo.addons.base.models.res_users import\
     name_boolean_group, name_selection_groups
 
 
 class ResCompanyCreateWizard(models.TransientModel):
     _name = 'res.company.create.wizard'
+    _description = 'Company Creation Wizard'
 
     _PASSWORD_SIZE = 8
 
@@ -52,12 +52,12 @@ class ResCompanyCreateWizard(models.TransientModel):
     # User Fields
     create_user = fields.Boolean(string='Create User')
 
-    user_name = fields.Char(string='Name')
+    user_name = fields.Char(string='User Name')
 
     user_login = fields.Char(
         string='Login', help="Let empty to use the email as login")
 
-    user_email = fields.Char(string='Email')
+    user_email = fields.Char(string='User Email')
 
     user_password = fields.Char(
         string='Password', default=lambda s: s._default_user_password())
@@ -84,7 +84,10 @@ class ResCompanyCreateWizard(models.TransientModel):
     def button_create_company(self):
         self.ensure_one()
         self._create_company()
-        return True
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'reload',
+        }
 
     # Overloadable Prepare Function
     @api.multi
@@ -131,9 +134,9 @@ class ResCompanyCreateWizard(models.TransientModel):
 
     @api.model
     def _prepare_user_group_ids_from_default_get(self):
-        group_obj = self.env['res.groups']
-        user_obj = self.env['res.users']
-        res1 = group_obj.get_groups_by_application()
+        ResGroups = self.env['res.groups']
+        ResUsers = self.env['res.users']
+        res1 = ResGroups.get_groups_by_application()
         fields = []
         for item in res1:
             if item[1] == 'boolean':
@@ -141,16 +144,16 @@ class ResCompanyCreateWizard(models.TransientModel):
                     fields.append(name_boolean_group(group.id))
             elif item[1] == 'selection':
                 fields.append(name_selection_groups(item[2].ids))
-        res2 = user_obj.default_get(fields)
+        res2 = ResUsers.default_get(fields)
         return res2['groups_id'][0][2]
 
     @api.multi
     def _create_company(self):
         self.ensure_one()
-        company_obj = self.env['res.company']
-        user_obj = self.env['res.users']
+        ResCompany = self.env['res.company']
+        ResUsers = self.env['res.users']
         # Create Company
-        self.company_id = company_obj.sudo().create(self._prepare_company())
+        self.company_id = ResCompany.sudo().create(self._prepare_company())
 
         # Swith current user to the new company
         self.env.user.write({
@@ -166,4 +169,4 @@ class ResCompanyCreateWizard(models.TransientModel):
 
         # Create User if required
         if self.create_user:
-            self.user_id = user_obj.create(self._prepare_user())
+            self.user_id = ResUsers.create(self._prepare_user())
