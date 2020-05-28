@@ -12,7 +12,7 @@ to create a new company.
 then, all the other modules are glue module, to handle extra settings required
 when other modules are installed.
 
-You could be interesting too by the following repositories:
+You could be interesting too by the following repositories :
 
 * [grap-odoo-business](https://github.com/grap/grap-odoo-business)
 * [grap-odoo-custom](https://github.com/grap/grap-odoo-custom)
