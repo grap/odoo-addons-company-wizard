@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
@@ -13,17 +12,17 @@ class ResCompanyCreateWizard(models.TransientModel):
     @api.multi
     def _create_company(self):
         self.ensure_one()
-        super(ResCompanyCreateWizard, self)._create_company()
-        pricelist_obj = self.env['product.pricelist']
+        super()._create_company()
+        ProductPricelist = self.env['product.pricelist']
 
         # update just created pricelist, if exist or create one
-        pricelists = pricelist_obj.search(
+        pricelists = ProductPricelist.search(
             [('name', '=', self.company_id.name)])
         if len(pricelists):
             pricelist = pricelists[0]
             pricelist.write(self._prepare_pricelist())
         else:
-            pricelist = pricelist_obj.create(self._prepare_pricelist())
+            pricelist = ProductPricelist.create(self._prepare_pricelist())
 
     @api.multi
     def _prepare_pricelist(self):
