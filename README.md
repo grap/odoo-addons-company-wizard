@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/odoo-cae/odoo-addons-company-wizard.svg?branch=12.0)](https://travis-ci.org/odoo-cae/odoo-addons-company-wizard)
 [![codecov](https://codecov.io/gh/odoo-cae/odoo-addons-company-wizard/branch/12.0/graph/badge.svg)](https://codecov.io/gh/odoo-cae/odoo-addons-company-wizard)
-[![Coverage Status](https://coveralls.io/repos/odoo-cae/odoo-addons-company-wizard/badge.png?branch=12.0)](https://coveralls.io/r/odoo-cae/odoo-addons-company-wizard?branch=12.0)
+[![Coverage Status](https://coveralls.io/repos/github/odoo-cae/odoo-addons-company-wizard/badge.svg?branch=12.0)](https://coveralls.io/github/odoo-cae/odoo-addons-company-wizard?branch=12.0)
 [![Code Climate](https://codeclimate.com/github/odoo-cae/odoo-addons-company-wizard/badges/gpa.svg)](https://codeclimate.com/github/odoo-cae/odoo-addons-company-wizard)
 
 
