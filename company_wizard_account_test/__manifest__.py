@@ -5,7 +5,7 @@
 
 {
     'name': 'Company Wizard - Account Module (Test)',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'Tools',
     'summary': "Module to test company_wizard_account module",
     'author': 'GRAP',
