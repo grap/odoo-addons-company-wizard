@@ -13,9 +13,9 @@
     'license': 'AGPL-3',
     'depends': [
         'base',
+        'res_company_code',
     ],
     'data': [
-        'views/view_res_company.xml',
         'views/view_res_company_create_wizard.xml',
     ],
     'demo': [
