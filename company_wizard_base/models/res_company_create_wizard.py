@@ -162,7 +162,8 @@ class ResCompanyCreateWizard(models.TransientModel):
         })
         # Clear cache, specially to reset obsoleted cached domain
         # ./odoo/tools/cache.py (_compute_domain)
-        self.env.clear()
+        # reuse same function as in res_company.py of the core module
+        self.clear_caches()
 
         # Manage Extra Data in associated partner
         self.company_id.partner_id.write(self._prepare_partner())
