@@ -153,7 +153,8 @@ class ResCompanyCreateWizard(models.TransientModel):
         ResCompany = self.env['res.company']
         ResUsers = self.env['res.users']
         # Create Company
-        self.company_id = ResCompany.sudo().create(self._prepare_company())
+        self.company_id = ResCompany.create(self._prepare_company())
+        self._post_create_company()
 
         # Swith current user to the new company
         self.env.user.write({
@@ -171,3 +172,8 @@ class ResCompanyCreateWizard(models.TransientModel):
         # Create User if required
         if self.create_user:
             self.user_id = ResUsers.create(self._prepare_user())
+
+    @api.multi
+    def _post_create_company(self):
+        """Function to be overloaded"""
+        self.ensure_one()
