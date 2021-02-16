@@ -7,8 +7,8 @@ import string
 from random import choice
 
 from odoo import api, fields, models
-from odoo.addons.base.models.res_users import\
-    name_boolean_group, name_selection_groups
+
+from odoo.addons.base.models.res_users import name_boolean_group, name_selection_groups
 
 
 class ResCompanyCreateWizard(models.TransientModel):
