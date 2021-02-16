@@ -7,11 +7,13 @@ from odoo import api, fields, models
 
 
 class ResCompanyCreateWizard(models.TransientModel):
-    _inherit = 'res.company.create.wizard'
+    _inherit = "res.company.create.wizard"
 
     chart_template_id = fields.Many2one(
-        comodel_name='account.chart.template', string='Account Template',
-        domain="[('visible', '=', True)]")
+        comodel_name="account.chart.template",
+        string="Account Template",
+        domain="[('visible', '=', True)]",
+    )
 
     @api.multi
     def _create_company(self):

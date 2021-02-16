@@ -4,16 +4,16 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Company Wizard - Account Module (Test)',
-    'version': '12.0.1.0.1',
-    'category': 'Tools',
-    'summary': "Module to test company_wizard_account module",
-    'author': 'GRAP',
-    'website': 'http://www.grap.coop',
-    'license': 'AGPL-3',
-    'depends': [
-        'company_wizard_account',
-        'l10n_generic_coa',
+    "name": "Company Wizard - Account Module (Test)",
+    "version": "12.0.1.0.1",
+    "category": "Tools",
+    "summary": "Module to test company_wizard_account module",
+    "author": "GRAP",
+    "website": "http://www.grap.coop",
+    "license": "AGPL-3",
+    "depends": [
+        "company_wizard_account",
+        "l10n_generic_coa",
     ],
-    'installable': True,
+    "installable": True,
 }

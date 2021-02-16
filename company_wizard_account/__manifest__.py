@@ -4,24 +4,21 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Company Wizard - Account Module',
-    'version': '12.0.1.0.1',
-    'category': 'Tools',
-    'summary': "Glue module to create companies when Account module is"
-    " installed",
-    'author': 'GRAP',
-    'website': 'http://www.grap.coop',
-    'license': 'AGPL-3',
-    'depends': [
-        'company_wizard_base',
-        'account',
+    "name": "Company Wizard - Account Module",
+    "version": "12.0.1.0.1",
+    "category": "Tools",
+    "summary": "Glue module to create companies when Account module is" " installed",
+    "author": "GRAP",
+    "website": "http://www.grap.coop",
+    "license": "AGPL-3",
+    "depends": [
+        "company_wizard_base",
+        "account",
     ],
-    'data': [
-        'views/view_res_company_create_wizard.xml'
+    "data": ["views/view_res_company_create_wizard.xml"],
+    "demo": [
+        "demo/res_groups.xml",
     ],
-    'demo': [
-        'demo/res_groups.xml',
-    ],
-    'installable': True,
-    'auto_install': True,
+    "installable": True,
+    "auto_install": True,
 }
