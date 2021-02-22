@@ -14,45 +14,48 @@ class TestModule(TransactionCase):
     # Overload Section
     def setUp(self):
         super().setUp()
-        self.ResUsers = self.env['res.users']
-        self.ResCompany = self.env['res.company']
-        self.CreateWizard = self.env['res.company.create.wizard']
+        self.ResUsers = self.env["res.users"]
+        self.ResCompany = self.env["res.company"]
+        self.CreateWizard = self.env["res.company.create.wizard"]
 
-        self.user_erp_manager = self.env.ref(
-            'company_wizard_base.user_erp_manager')
-        fix_required_field(self, 'DROP')
+        self.user_erp_manager = self.env.ref("company_wizard_base.user_erp_manager")
+        fix_required_field(self, "DROP")
 
     def tearDown(self):
         self.cr.rollback()
-        fix_required_field(self, 'SET')
+        fix_required_field(self, "SET")
         super().tearDown()
 
     # Test Section
     def test_01_wizard(self):
         """Create a child company via the wizard, with user ERP Manager"""
-        wizard = self.CreateWizard.sudo(self.user_erp_manager).create({
-            'company_name': 'Test Company Wizard',
-            'company_code': 'WIZ',
-            'create_user': True,
-            'user_name': 'Test User Wizard',
-            'user_login': 'test_user_wizard@odoo.com',
-        })
+        wizard = self.CreateWizard.sudo(self.user_erp_manager).create(
+            {
+                "company_name": "Test Company Wizard",
+                "company_code": "WIZ",
+                "create_user": True,
+                "user_name": "Test User Wizard",
+                "user_login": "test_user_wizard@odoo.com",
+            }
+        )
         wizard.button_create_company()
 
         # Check if the company is well created
-        companies = self.ResCompany.search([
-            ('name', '=', 'Test Company Wizard'),
-        ])
+        companies = self.ResCompany.search(
+            [
+                ("name", "=", "Test Company Wizard"),
+            ]
+        )
         self.assertEqual(
-            len(companies), 1,
-            "The company creation via the wizard failed.")
+            len(companies), 1, "The company creation via the wizard failed."
+        )
 
         # Check if the user is well created
-        users = self.ResUsers.search([
-            ('name', '=', 'Test User Wizard'),
-            ('login', '=', 'test_user_wizard@odoo.com'),
-            ('company_id', '=', companies[0].id),
-        ])
-        self.assertEqual(
-            len(users), 1,
-            "The user creation via the wizard failed.")
+        users = self.ResUsers.search(
+            [
+                ("name", "=", "Test User Wizard"),
+                ("login", "=", "test_user_wizard@odoo.com"),
+                ("company_id", "=", companies[0].id),
+            ]
+        )
+        self.assertEqual(len(users), 1, "The user creation via the wizard failed.")

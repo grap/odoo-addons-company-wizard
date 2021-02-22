@@ -12,19 +12,21 @@ class TestWizard(TransactionCase):
     # Overload Section
     def setUp(self):
         super().setUp()
-        self.CreateWizard = self.env['res.company.create.wizard']
-        self.user_erp_manager = self.env.ref(
-            'company_wizard_base.user_erp_manager')
+        self.CreateWizard = self.env["res.company.create.wizard"]
+        self.user_erp_manager = self.env.ref("company_wizard_base.user_erp_manager")
         self.chart_template = self.env.ref(
-            'l10n_generic_coa.configurable_chart_template')
+            "l10n_generic_coa.configurable_chart_template"
+        )
 
     # Test Section
     def test_01_chart_of_account_creation(self):
         """[Functional Test] creating a new company via wizard
         should generate a Chart of Account"""
-        wizard = self.CreateWizard.sudo(self.user_erp_manager).create({
-            'company_name': 'Test Company Wizard',
-            'company_code': 'WIZ',
-            'chart_template_id': self.chart_template.id,
-        })
+        wizard = self.CreateWizard.sudo(self.user_erp_manager).create(
+            {
+                "company_name": "Test Company Wizard",
+                "company_code": "WIZ",
+                "chart_template_id": self.chart_template.id,
+            }
+        )
         wizard.button_create_company()
