@@ -9,7 +9,7 @@
     "category": "Tools",
     "summary": "Provide Wizard to create new companies more easily",
     "author": "GRAP",
-    "website": "http://www.grap.coop",
+    "website": "https://github.com/grap/odoo-addons-company-wizard",
     "license": "AGPL-3",
     "depends": [
         "base",
