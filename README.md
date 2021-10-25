@@ -23,10 +23,10 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[company_wizard_account](company_wizard_account/) | 12.0.1.1.0 |  | Glue module to create companies when Account module is installed
-[company_wizard_account_test](company_wizard_account_test/) | 12.0.1.1.0 |  | Module to test company_wizard_account module
-[company_wizard_base](company_wizard_base/) | 12.0.1.1.1 |  | Provide Wizard to create new companies more easily
-[company_wizard_product](company_wizard_product/) | 12.0.1.1.0 |  | Glue module to create companies when Product module is installed
+[company_wizard_account](company_wizard_account/) | 12.0.1.1.1 |  | Glue module to create companies when Account module is installed
+[company_wizard_account_test](company_wizard_account_test/) | 12.0.1.1.1 |  | Module to test company_wizard_account module
+[company_wizard_base](company_wizard_base/) | 12.0.1.1.2 |  | Provide Wizard to create new companies more easily
+[company_wizard_product](company_wizard_product/) | 12.0.1.1.1 |  | Glue module to create companies when Product module is installed
 
 [//]: # (end addons)
 
