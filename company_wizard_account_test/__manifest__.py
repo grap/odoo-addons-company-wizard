@@ -9,7 +9,7 @@
     "category": "Tools",
     "summary": "Module to test company_wizard_account module",
     "author": "GRAP",
-    "website": "http://www.grap.coop",
+    "website": "https://github.com/grap/odoo-addons-company-wizard",
     "license": "AGPL-3",
     "depends": [
         "company_wizard_account",

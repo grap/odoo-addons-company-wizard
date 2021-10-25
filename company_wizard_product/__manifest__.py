@@ -8,7 +8,7 @@
     "category": "Tools",
     "summary": "Glue module to create companies when Product module is" " installed",
     "author": "GRAP",
-    "website": "http://www.grap.coop",
+    "website": "https://github.com/grap/odoo-addons-company-wizard",
     "license": "AGPL-3",
     "depends": [
         "company_wizard_base",
