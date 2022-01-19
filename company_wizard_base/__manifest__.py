@@ -5,7 +5,7 @@
 
 {
     "name": "Company Wizard - Base Module",
-    "version": "12.0.1.1.2",
+    "version": "12.0.1.1.3",
     "category": "Tools",
     "summary": "Provide Wizard to create new company more easily",
     "author": "GRAP",
