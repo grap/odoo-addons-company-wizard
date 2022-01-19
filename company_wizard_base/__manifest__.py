@@ -7,7 +7,7 @@
     "name": "Company Wizard - Base Module",
     "version": "12.0.1.1.2",
     "category": "Tools",
-    "summary": "Provide Wizard to create new companies more easily",
+    "summary": "Provide Wizard to create new company more easily",
     "author": "GRAP",
     "website": "https://github.com/grap/odoo-addons-company-wizard",
     "license": "AGPL-3",
