@@ -1,5 +1,5 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: 7de0cb5
+_commit: 5a39237
 _src_path: https://github.com/grap/oca-addons-repo-template-new.git
 ci: GitHub
 dependency_installation_mode: PIP
@@ -16,14 +16,12 @@ odoo_version: 16.0
 org_name: GRAP
 org_slug: grap
 rebel_module_groups: []
-repo_description: "
-The ``company_wizard_base`` create a new menu item
-that provide a wizard to create a new company.
+repo_description: ' The ``company_wizard_base`` create a new menu item that provide
+    a wizard to create a new company.
 
-Then, all the other modules are glue module,
-to handle extra settings required when other modules are installed.
-"
-repo_name: Odoo modules that provide a wizard to create companies 
+    Then, all the other modules are glue module, to handle extra settings required
+    when other modules are installed. '
+repo_name: Odoo modules that provide a wizard to create companies
 repo_slug: odoo-addons-company-wizard
 repo_website: https://github.com/grap/odoo-addons-company-wizard
 travis_apt_packages: []
